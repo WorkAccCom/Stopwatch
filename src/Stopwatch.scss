@@ -1,0 +1,12 @@
+.Stopwatch {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
+
+  &__clock {
+    margin-bottom: 25px;
+    font-size: 60px;
+    letter-spacing: 0.05em;
+  }
+}

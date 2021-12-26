@@ -1,9 +1,16 @@
-# React TypeScript Starter Pack
+# Stopwatch
 
-To use this template click `Use this template`
+[DEMO LINK](https://workacccom.github.io/Stopwatch/)
 
-### Available Scripts
+Used technologies:\
+• React.JS  (Hooks)\
+• HTML5\
+• SASS\
 
-`Deploy` - available to deploy your application to gh-pages
+# Description
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+Stopwatch, which displays time in HH:MM:SS format. Have 3 buttons with next functionality:\
+
+• `Start / Stop` — starts and stops time counting. By clicking `Stop` button clocks value sets to default zero values;\
+• `Wait` — works only on double click. Stopwatch should stop it's work, but do not set to default values. After clicking `Start` button time counting should continue;\
+• `Reset` — sets clock to default zero values but stopwatch continues time counting\
