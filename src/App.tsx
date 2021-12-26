@@ -7,12 +7,24 @@ export const App: React.FC = () => {
   const [timerId, changeTimerId] = useState(0);
 
   const startStopwatch = () => {
-    const id = window.setInterval(() => changeSecondsValue((s) => s + 1), 1000);
+    const id = window.setInterval(
+      () => changeSecondsValue((s) => s + 1),
+      1000,
+    );
 
     changeTimerId(id);
   };
 
   const stopStopwatch = (id: number) => {
+    window.clearInterval(id);
+    changeSecondsValue(0);
+  };
+
+  const pauseStopwatch = (id: number) => {
+    window.clearInterval(id);
+  };
+
+  const secondsReset = (id: number) => {
     window.clearInterval(id);
     changeSecondsValue(0);
   };
@@ -47,6 +59,8 @@ export const App: React.FC = () => {
           startStopwatchFunc={startStopwatch}
           stopStopwatchFunc={stopStopwatch}
           id={timerId}
+          wait={pauseStopwatch}
+          reset={secondsReset}
         />
       </div>
     </div>

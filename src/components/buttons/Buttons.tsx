@@ -4,12 +4,16 @@ interface Props {
   startStopwatchFunc: () => void,
   stopStopwatchFunc: (id: number) => void,
   id: number,
+  wait: (id: number) => void,
+  reset: (id: number) => void
 }
 
 export const Buttons: React.FC<Props> = ({
   startStopwatchFunc,
   stopStopwatchFunc,
   id,
+  wait,
+  reset,
 }) => {
   const [startOrStop, startOrStopSwitcher] = useState('Start');
 
@@ -23,6 +27,19 @@ export const Buttons: React.FC<Props> = ({
     }
   };
 
+  const waitOnClickAction = () => {
+    wait(id);
+    startOrStopSwitcher('Start');
+  };
+
+  const resetOnClickAction = () => {
+    reset(id);
+
+    if (startOrStop === 'Stop') {
+      startStopwatchFunc();
+    }
+  };
+
   return (
     <div className="Buttons">
       <button
@@ -31,6 +48,20 @@ export const Buttons: React.FC<Props> = ({
         className="Buttons__button"
       >
         {startOrStop}
+      </button>
+      <button
+        type="button"
+        onDoubleClick={waitOnClickAction}
+        className="Buttons__button"
+      >
+        Wait
+      </button>
+      <button
+        type="button"
+        onClick={resetOnClickAction}
+        className="Buttons__button"
+      >
+        Reset
       </button>
     </div>
   );
