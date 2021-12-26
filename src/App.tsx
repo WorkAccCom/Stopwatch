@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.scss';
+import './Stopwatch.scss';
 import { Buttons } from './components/buttons';
 
 export const App: React.FC = () => {

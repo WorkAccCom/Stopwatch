@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Buttons.scss';
 
 interface Props {
   startStopwatchFunc: () => void,
@@ -59,7 +60,7 @@ export const Buttons: React.FC<Props> = ({
       <button
         type="button"
         onClick={resetOnClickAction}
-        className="Buttons__button"
+        className="Buttons__button Buttons__button--warning"
       >
         Reset
       </button>
